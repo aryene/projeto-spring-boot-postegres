@@ -7,29 +7,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 
 @Entity
-@Table(name = "tb_setor")
-public class Setor implements Serializable {
-	/**
-	 * 
-	 */
+public class Departamento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String nome;
-	
-	public Setor() {
+    private Long id;
+    private String titulo;
+    
+    public Departamento() {
 	}
 
-	public Setor(Long id, String nome) {
+	public Departamento(Long id, String titulo) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.titulo = titulo;
 	}
 
 	public Long getId() {
@@ -40,12 +36,12 @@ public class Setor implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	@Override
@@ -61,11 +57,10 @@ public class Setor implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Setor other = (Setor) obj;
+		Departamento other = (Departamento) obj;
 		return Objects.equals(id, other.id);
 	}
+    
+    
 
-
-	
-	
 }
